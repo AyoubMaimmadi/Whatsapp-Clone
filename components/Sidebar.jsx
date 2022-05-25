@@ -6,6 +6,8 @@ const Sidebar = () => {
     <Container>
       <Header>
         <UserAvatar />
+
+        <IconsContainer></IconsContainer>
       </Header>
     </Container>
   )
@@ -20,3 +22,5 @@ const Header = styled.div``
 const UserAvatar = styled(Avatar)`
   margin: 10px;
 `
+
+const IconsContainer = styled.div``
