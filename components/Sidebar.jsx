@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import { Avatar } from '@mui/material'
+import { Avatar, IconButton } from '@mui/material'
+import ChatIcon from '@mui/icons-material/Chat'
+import MoreVertIcon from '@mui/icons-material/MoreVert'
 
 const Sidebar = () => {
   return (
@@ -7,7 +9,14 @@ const Sidebar = () => {
       <Header>
         <UserAvatar />
 
-        <IconsContainer></IconsContainer>
+        <IconsContainer>
+          <IconButton>
+            <ChatIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
+        </IconsContainer>
       </Header>
     </Container>
   )
