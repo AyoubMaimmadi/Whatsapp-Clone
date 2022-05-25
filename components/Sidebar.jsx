@@ -26,10 +26,19 @@ export default Sidebar
 
 const Container = styled.div``
 
-const Header = styled.div``
-
-const UserAvatar = styled(Avatar)`
-  margin: 10px;
+const Header = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 80px;
+  border-bottom: 1px solid whitesmoke;
 `
+
+const UserAvatar = styled(Avatar)``
 
 const IconsContainer = styled.div``
