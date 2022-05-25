@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Head from 'next/head'
 
-const login = () => {
+const Login = () => {
   return (
     <container>
       <Head>
@@ -11,4 +11,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
