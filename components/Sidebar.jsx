@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Avatar, IconButton } from '@mui/material'
+import { Avatar, Button, IconButton } from '@mui/material'
 import ChatIcon from '@mui/icons-material/Chat'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
@@ -23,6 +23,7 @@ const Sidebar = () => {
         <SearchOutlinedIcon />
         <SearchInput placeholder="Search..." />
       </Search>
+      <SidebarButton>Start a new Chat</SidebarButton>
     </Container>
   )
 }
@@ -65,4 +66,10 @@ const SearchInput = styled.input`
   outline-width: 0;
   border: none;
   flex: 1;
+`
+
+const SidebarButton = styled(Button)`
+  width: 100%;
+  border-top: 1px solid whitesmoke;
+  border-bottom: 1px solid whitesmoke;
 `
