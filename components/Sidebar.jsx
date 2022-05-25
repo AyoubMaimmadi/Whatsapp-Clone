@@ -3,12 +3,17 @@ import { Avatar, Button, IconButton } from '@mui/material'
 import ChatIcon from '@mui/icons-material/Chat'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
+import * as EmailValidator from 'email-validator'
 
 const Sidebar = () => {
   const createChat = () => {
     const input = prompt('Enter the email for the person you want to chat with')
 
     if (!input) return null
+
+    if (EmailValidator.validate(input)) {
+      // add chat to db
+    }
   }
 
   return (
