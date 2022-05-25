@@ -20,14 +20,21 @@ const Sidebar = () => {
 
     if (!input) return null
 
-    if (EmailValidator.validate(input) && input !== user.email) {
+    if (
+      EmailValidator.validate(input) &&
+      !chatAlreadyExists(input) &&
+      input !== user.email
+    ) {
       db.collection('chats').add({
         users: [user.email, input],
       })
     }
   }
 
-  const chatAlreadyExists = (email) => {}
+  const chatAlreadyExists = (email) =>
+    !!chatsSnapshot?.docs.find(
+      (chat) => chat.data().users.find((user) => user === email)?.length > 0
+    )
 
   return (
     <Container>
