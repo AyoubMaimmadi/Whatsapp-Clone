@@ -3,12 +3,20 @@ import Head from 'next/head'
 
 const Login = () => {
   return (
-    <container>
+    <Container>
       <Head>
         <title>Login</title>
       </Head>
-    </container>
+
+      <LoginContainer>
+        <Logo src="./1.png" />
+      </LoginContainer>
+    </Container>
   )
 }
 
 export default Login
+
+const Container = styled.div``
+const LoginContainer = styled.div``
+const Logo = styled.img``
