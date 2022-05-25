@@ -57,7 +57,7 @@ const Sidebar = () => {
       </Search>
       <SidebarButton onClick={createChat}>Start a new Chat</SidebarButton>
       {chatsSnapshot?.docs.map((chat) => (
-        <Chat key={chat.id} id={chat.data().users} />
+        <Chat key={chat.id} id={chat.id} users={chat.data().users} />
       ))}
     </Container>
   )
