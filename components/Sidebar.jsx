@@ -6,20 +6,28 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 import * as EmailValidator from 'email-validator'
 import { auth, db } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useCollection } from 'react-firebase-hooks/firestore'
 
 const Sidebar = () => {
   const [user] = useAuthState(auth)
+  const userChatRef = db
+    .collection('chats')
+    .where('users', 'array-contains', user.email)
+  const [chatsSnapshot] = useCollection(userChatRef)
+
   const createChat = () => {
     const input = prompt('Enter the email for the person you want to chat with')
 
     if (!input) return null
 
-    if (EmailValidator.validate(input)) {
+    if (EmailValidator.validate(input) && input !== user.email) {
       db.collection('chats').add({
         users: [user.email, input],
       })
     }
   }
+
+  const chatAlreadyExists = (email) => {}
 
   return (
     <Container>
