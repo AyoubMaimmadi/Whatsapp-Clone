@@ -5,6 +5,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 const Sidebar = () => {
+  const createChat = () => {
+    const input = prompt('Enter the email for the person you want to chat with')
+
+    if (!input) return null
+  }
+
   return (
     <Container>
       <Header>
@@ -23,7 +29,7 @@ const Sidebar = () => {
         <SearchOutlinedIcon />
         <SearchInput placeholder="Search..." />
       </Search>
-      <SidebarButton>Start a new Chat</SidebarButton>
+      <SidebarButton onClick={createChat}>Start a new Chat</SidebarButton>
     </Container>
   )
 }
