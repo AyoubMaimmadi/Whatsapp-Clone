@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Avatar, IconButton } from '@mui/material'
 import ChatIcon from '@mui/icons-material/Chat'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 const Sidebar = () => {
   return (
@@ -18,6 +19,9 @@ const Sidebar = () => {
           </IconButton>
         </IconsContainer>
       </Header>
+      <Search>
+        <SearchOutlinedIcon />
+      </Search>
     </Container>
   )
 }
@@ -48,3 +52,5 @@ const UserAvatar = styled(Avatar)`
 `
 
 const IconsContainer = styled.div``
+
+const Search = styled.div``
