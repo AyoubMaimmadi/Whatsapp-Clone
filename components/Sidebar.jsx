@@ -39,6 +39,12 @@ const Header = styled.div`
   border-bottom: 1px solid whitesmoke;
 `
 
-const UserAvatar = styled(Avatar)``
+const UserAvatar = styled(Avatar)`
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  :hover {
+    opacity: 0.8;
+  }
+`
 
 const IconsContainer = styled.div``
