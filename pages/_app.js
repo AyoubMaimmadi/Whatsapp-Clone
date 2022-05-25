@@ -4,6 +4,9 @@ import { auth, db } from '../firebase'
 
 function MyApp({ Component, pageProps }) {
   const [user] = useAuthState(auth)
+
+  if (!user) return <Login />
+
   return <Component {...pageProps} />
 }
 
