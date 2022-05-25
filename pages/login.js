@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import Head from 'next/head'
 import { Button } from '@mui/material'
+import { auth, provider } from '../firebase'
 
 const Login = () => {
+  const signIn = () => {
+    auth.signInWithPopup(provider).catch(alert)
+  }
+
   return (
     <Container>
       <Head>
@@ -11,7 +16,9 @@ const Login = () => {
 
       <LoginContainer>
         <Logo src="./1.png" />
-        <Button variant="outlined">Sign in with Google</Button>
+        <Button onClick={signIn} variant="outlined">
+          Sign in with Google
+        </Button>
       </LoginContainer>
     </Container>
   )
