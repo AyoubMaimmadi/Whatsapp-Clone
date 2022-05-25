@@ -70,6 +70,8 @@ const SearchInput = styled.input`
 
 const SidebarButton = styled(Button)`
   width: 100%;
-  border-top: 1px solid whitesmoke;
-  border-bottom: 1px solid whitesmoke;
+  &&& {
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+  }
 `
