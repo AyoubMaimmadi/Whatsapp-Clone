@@ -16,7 +16,12 @@ const Chat = ({ id, users }) => {
 
   return (
     <Container>
-      <UserAvatar />
+      {recipient ? (
+        <UserAvatar src={recipient?.photoURL} />
+      ) : (
+        <UserAvatar>{RecipientEmail[0]}</UserAvatar>
+      )}
+
       <p>{RecipientEmail}</p>
     </Container>
   )
