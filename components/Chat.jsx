@@ -3,9 +3,14 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import styled from 'styled-components'
 import { auth } from '../firebase'
 import getRecipientEmail from '../utils/getRecipientEmail'
+import { useCollection } from 'react-firebase-hooks/firestore'
 
 const Chat = ({ id, users }) => {
   const [user] = useAuthState(auth)
+  const [recipientSnapshot] = useCollection(
+    db.collection('users').where('email', '==', getRecipientEmail(users, user))
+  )
+
   const RecipientEmail = getRecipientEmail(users, user)
 
   return (
