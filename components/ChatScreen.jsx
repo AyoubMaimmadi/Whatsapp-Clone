@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { db, auth } from '../firebase'
 import { useRouter } from 'next/router'
-import { Avatar } from '@mui/material'
+import { Avatar, IconButton } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import AttachFileIcon from '@mui/icons-material/AttachFile'
 
@@ -18,6 +18,14 @@ const ChatScreen = ({ chat, messages }) => {
           <h3>Recipient Email</h3>
           <p>Last seen ...</p>
         </HeaderInformation>
+        <HeaderIcons>
+          <IconButton>
+            <AttachFileIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
+        </HeaderIcons>
       </Header>
     </Container>
   )
