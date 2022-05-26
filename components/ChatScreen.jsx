@@ -8,6 +8,7 @@ import AttachFileIcon from '@mui/icons-material/AttachFile'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import Message from './Message'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
+import MicIcon from '@mui/icons-material/Mic'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
@@ -66,7 +67,16 @@ const ChatScreen = ({ chat, messages }) => {
 
 export default ChatScreen
 
-const Input = styled.input``
+const Input = styled.input`
+  flex: 1;
+  border: none;
+  outline: 0;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  padding: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+`
 
 const Container = styled.div``
 
