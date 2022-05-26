@@ -90,7 +90,7 @@ const ChatScreen = ({ chat, messages }) => {
     <Container>
       <Header>
         {recipient ? (
-          <Avatar src={recipient?.photoURL} />
+          <Avatar style={{ marginLeft: '20px' }} src={recipient?.photoURL} />
         ) : (
           <Avatar>{recipientEmail[0]}</Avatar>
         )}
@@ -152,7 +152,7 @@ const Input = styled.input`
   border: none;
   outline: 0;
   border-radius: 10px;
-  background-color: #ced4da;
+  background-color: #aaaaaa;
   padding: 20px;
   margin-left: 15px;
   margin-right: 15px;
@@ -172,14 +172,14 @@ const InputContainer = styled.form`
 
 const Header = styled.div`
   position: sticky;
-  background-color: #5d5d5d;
+  background-color: #aaaaaa;
   z-index: 100;
   top: 0;
   display: flex;
   height: 80px;
   align-items: center;
   border-bottom: 1px solid whitesmoke;
-  color: white;
+  color: black;
 `
 
 const HeaderInformation = styled.div`
@@ -191,8 +191,9 @@ const HeaderInformation = styled.div`
   }
 
   > p {
+    margin-top: 3px;
     font-size: 14px;
-    color: lightgrey;
+    color: #363537;
   }
 `
 

@@ -50,4 +50,5 @@ const Container = styled.div`
 const UserAvatar = styled(Avatar)`
   margin: 5px;
   margin-right: 15px;
+  margin-left: 10px;
 `
