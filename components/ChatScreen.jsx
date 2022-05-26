@@ -12,6 +12,7 @@ import MicIcon from '@mui/icons-material/Mic'
 import { useState } from 'react'
 import firebase from 'firebase'
 import getRecipientEmail from '../utils/getRecipientEmail'
+import TimeAgo from 'timeago-react'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
@@ -86,13 +87,16 @@ const ChatScreen = ({ chat, messages }) => {
         <HeaderInformation>
           <h3>{recipientEmail}</h3>
           {recipientSnapshot ? (
-            <>
-              <p>
-                Last Active: {recipient?.lastSeen?.toDate()?.toLocaleString()}
-              </p>
-            </>
+            <p>
+              Last Active:{' '}
+              {recipient?.lastSeen?.toDate() ? (
+                <TimeAgo datetime={recipient?.lastSeen?.toDate()} />
+              ) : (
+                'Unavailable'
+              )}
+            </p>
           ) : (
-            <p>{recipientEmail}</p>
+            <p>Loading last active ...</p>
           )}
         </HeaderInformation>
         <HeaderIcons>
