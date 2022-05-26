@@ -9,7 +9,12 @@ const Message = ({ user, message }) => {
 
   return (
     <Container>
-      <TypeOfMessage>{message.message}</TypeOfMessage>
+      <TypeOfMessage>
+        {message.message}
+        {message.timestamp
+          ? moment(message.timestamp.toDate()).fromNow()
+          : null}
+      </TypeOfMessage>
     </Container>
   )
 }
