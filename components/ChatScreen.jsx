@@ -129,7 +129,11 @@ const ChatScreen = ({ chat, messages }) => {
         <IconButton>
           <AttachFileIcon />
         </IconButton>
-        <Input value={input} onChange={(e) => setInput(e.target.value)} />
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type a message"
+        />
         <button hidden disabled={!input} type="submit" onClick={sendMessage}>
           Send Message
         </button>
@@ -168,7 +172,7 @@ const InputContainer = styled.form`
 
 const Header = styled.div`
   position: sticky;
-  background-color: white;
+  background-color: #ced4da;
   z-index: 100;
   top: 0;
   display: flex;
@@ -195,7 +199,7 @@ const HeaderIcons = styled.div``
 
 const MessageContainer = styled.div`
   padding: 30px;
-  background-color: #e5ded8;
+  background-color: #474a48;
   min-height: 90vh;
 `
 
