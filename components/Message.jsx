@@ -26,3 +26,12 @@ const MessageElement = styled.p`
   position: relative;
   text-align: right;
 `
+const Sender = styled(MessageElement)`
+  margin-left: auto;
+  background-color: #dcf8c6;
+`
+
+const Receiver = styled(MessageElement)`
+  text-align: left;
+  background-color: whitesmoke;
+`
