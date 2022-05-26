@@ -4,7 +4,7 @@ import ChatScreen from '../../components/ChatScreen'
 import Sidebar from '../../components/Sidebar'
 import { db } from '../../firebase'
 
-const Chat = () => {
+const Chat = ({ chat, messages }) => {
   return (
     <Container>
       <Head>
@@ -38,8 +38,19 @@ export const getServerSideProps = async (contex) => {
       timestamp: messages.timestamp.toDate().getTime(),
     }))
 
+  const chatRes = await ref.get()
+  const chat = {
+    id: chatRes.id,
+    ...chatRes.data(),
+  }
+
+  console.log(chat, messages)
+
   return {
-    props: {},
+    props: {
+      messages: JSON.stringify(messages),
+      chat: chat,
+    },
   }
 }
 
