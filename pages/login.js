@@ -15,7 +15,7 @@ const Login = () => {
       </Head>
 
       <LoginContainer>
-        <Logo src="./1.png" />
+        <Logo src="/logo.png" />
         <Button onClick={signIn} variant="outlined">
           Sign in with Google
         </Button>

@@ -6,7 +6,7 @@ const Loading = () => {
     <center style={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
       <div>
         <Image
-          src="/1.png"
+          src="/logo.png"
           height={200}
           width={200}
           style={{ marginBottom: 10 }}
