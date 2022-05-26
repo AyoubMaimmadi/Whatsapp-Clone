@@ -192,11 +192,13 @@ const HeaderInformation = styled.div`
 
   > p {
     font-size: 14px;
-    color: white;
+    color: lightgrey;
   }
 `
 
-const HeaderIcons = styled.div``
+const HeaderIcons = styled.div`
+  color: white;
+`
 
 const MessageContainer = styled.div`
   padding: 30px;
