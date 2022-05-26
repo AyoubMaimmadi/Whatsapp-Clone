@@ -11,6 +11,7 @@ import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import MicIcon from '@mui/icons-material/Mic'
 import { useState } from 'react'
 import firebase from 'firebase'
+import getRecipientEmail from '../utils/getRecipientEmail'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
@@ -64,12 +65,14 @@ const ChatScreen = ({ chat, messages }) => {
     setInput('')
   }
 
+  const recipientEmail = getRecipientEmail(chat.users, user)
+
   return (
     <Container>
       <Header>
         <Avatar />
         <HeaderInformation>
-          <h3>Recipient Email</h3>
+          <h3>{recipientEmail}</h3>
           <p>Last seen ...</p>
         </HeaderInformation>
         <HeaderIcons>
