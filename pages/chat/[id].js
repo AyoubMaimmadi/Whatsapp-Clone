@@ -23,6 +23,21 @@ export default Chat
 export const getServerSideProps = async (contex) => {
   const ref = db.collection('chats').doc(contex.query.id)
 
+  const messageRes = await ref
+    .collection('messages')
+    .orderBy('timestamp', 'asc')
+    .get()
+
+  const messages = messageRes.docs
+    .map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }))
+    .map((messages) => ({
+      ...messages,
+      timestamp: messages.timestamp.toDate().getTime(),
+    }))
+
   return {
     props: {},
   }
