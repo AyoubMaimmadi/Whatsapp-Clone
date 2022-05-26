@@ -110,10 +110,10 @@ const ChatScreen = ({ chat, messages }) => {
           )}
         </HeaderInformation>
         <HeaderIcons>
-          <IconButton>
+          <IconButton style={{ color: 'white' }}>
             <SearchOutlinedIcon />
           </IconButton>
-          <IconButton>
+          <IconButton style={{ color: 'white' }}>
             <MoreVertIcon />
           </IconButton>
         </HeaderIcons>
@@ -123,10 +123,10 @@ const ChatScreen = ({ chat, messages }) => {
         <EndOfMessage ref={endOfMessageRef} />
       </MessageContainer>
       <InputContainer>
-        <IconButton>
+        <IconButton style={{ color: 'white' }}>
           <InsertEmoticonIcon />
         </IconButton>
-        <IconButton>
+        <IconButton style={{ color: 'white' }}>
           <AttachFileIcon />
         </IconButton>
         <Input
@@ -137,7 +137,7 @@ const ChatScreen = ({ chat, messages }) => {
         <button hidden disabled={!input} type="submit" onClick={sendMessage}>
           Send Message
         </button>
-        <IconButton>
+        <IconButton style={{ color: 'white' }}>
           <MicIcon />
         </IconButton>
       </InputContainer>

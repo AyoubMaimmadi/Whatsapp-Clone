@@ -71,7 +71,8 @@ const Container = styled.div`
   min-width: 300px;
   max-width: 350px;
   overflow-y: scroll;
-  color: white;
+  color: black;
+  font-weight: 600;
 
   ::-webkit-scrollbar {
     display: none;
@@ -85,7 +86,7 @@ const Header = styled.div`
   display: flex;
   position: sticky;
   top: 0;
-  background-color: #5d5d5d;
+  background-color: #aaaaaa;
   z-index: 1;
   justify-content: space-between;
   align-items: center;
@@ -109,14 +110,20 @@ const Search = styled.div`
   align-items: center;
   padding: 20px;
   border-radius: 2px;
-  background-color: #b7b6c2;
+  background-color: #aaaaaa;
 `
 
 const SearchInput = styled.input`
-  outline-width: 0;
+  outline-width: 1;
   border: none;
   flex: 1;
-  background-color: #b7b6c2;
+  border: none;
+  outline: 0;
+  border-radius: 10px;
+  background-color: #ced4da;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 `
 
 const SidebarButton = styled(Button)`
