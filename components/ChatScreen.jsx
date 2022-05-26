@@ -58,8 +58,13 @@ const ChatScreen = ({ chat, messages }) => {
         <EndOfMessage />
       </MessageContainer>
       <InputContainer>
-        <InsertEmoticonIcon />
+        <IconButton>
+          <InsertEmoticonIcon />
+        </IconButton>
         <Input />
+        <IconButton>
+          <MicIcon />
+        </IconButton>
       </InputContainer>
     </Container>
   )
