@@ -3,7 +3,14 @@ import { Circle } from 'better-react-spinkit'
 
 const Loading = () => {
   return (
-    <center style={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
+    <center
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        height: '100vh',
+        backgroundColor: 'white',
+      }}
+    >
       <div>
         <Image
           src="/logo.png"
