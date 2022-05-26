@@ -5,10 +5,35 @@ import { useRouter } from 'next/router'
 import { Avatar, IconButton } from '@mui/material'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import AttachFileIcon from '@mui/icons-material/AttachFile'
+import { useCollection } from 'react-firebase-hooks/firestore'
+import Message from './Message'
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
   const router = useRouter()
+  const [messagesSnapShot] = useCollection(
+    db
+      .collection('chats')
+      .doc(router.query.id)
+      .collection('messages')
+      .orderBy('timestamp', 'asc')
+  )
+
+  const showMessages = () => {
+    if (messagesSnapShot) {
+      return messagesSnapShot.docs.map((message) => (
+        <Message
+          key={message.id}
+          user={message.data().user}
+          message={{
+            ...message.data(),
+            timestamp: message.data().timestamp?.toDate().getTime(),
+          }}
+        />
+      ))
+    }
+  }
 
   return (
     <Container>
@@ -27,13 +52,33 @@ const ChatScreen = ({ chat, messages }) => {
           </IconButton>
         </HeaderIcons>
       </Header>
+      <MessageContainer>
+        {showMessages()}
+        <EndOfMessage />
+      </MessageContainer>
+      <InputContainer>
+        <InsertEmoticonIcon />
+        <Input />
+      </InputContainer>
     </Container>
   )
 }
 
 export default ChatScreen
 
+const Input = styled.input``
+
 const Container = styled.div``
+
+const InputContainer = styled.form`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  z-index: 100;
+`
 
 const Header = styled.div`
   position: sticky;
@@ -61,3 +106,7 @@ const HeaderInformation = styled.div`
 `
 
 const HeaderIcons = styled.div``
+
+const MessageContainer = styled.div``
+
+const EndOfMessage = styled.div``
