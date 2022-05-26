@@ -37,3 +37,12 @@ const Receiver = styled(MessageElement)`
   background-color: whitesmoke;
   text-align: left;
 `
+const Timestamp = styled.span`
+  color: gray;
+  padding: 10px;
+  font-size: 9px;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  right: 0;
+`
