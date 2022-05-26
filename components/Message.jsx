@@ -41,7 +41,7 @@ const Sender = styled(MessageElement)`
 `
 
 const Receiver = styled(MessageElement)`
-  background-color: #909590;
+  background-color: #474a48;
   text-align: left;
 `
 const Timestamp = styled.span`

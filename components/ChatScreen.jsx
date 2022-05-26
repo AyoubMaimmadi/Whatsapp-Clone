@@ -166,19 +166,20 @@ const InputContainer = styled.form`
   padding: 10px;
   position: sticky;
   bottom: 0;
-  background-color: #adb5bd;
+  background-color: #5d5d5d;
   z-index: 100;
 `
 
 const Header = styled.div`
   position: sticky;
-  background-color: #ced4da;
+  background-color: #5d5d5d;
   z-index: 100;
   top: 0;
   display: flex;
   height: 80px;
   align-items: center;
   border-bottom: 1px solid whitesmoke;
+  color: white;
 `
 
 const HeaderInformation = styled.div`
@@ -191,7 +192,7 @@ const HeaderInformation = styled.div`
 
   > p {
     font-size: 14px;
-    color: gray;
+    color: white;
   }
 `
 
@@ -199,7 +200,7 @@ const HeaderIcons = styled.div``
 
 const MessageContainer = styled.div`
   padding: 30px;
-  background-color: #474a48;
+  background-color: #2c302e;
   min-height: 90vh;
 `
 
