@@ -9,10 +9,13 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 import Message from './Message'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import MicIcon from '@mui/icons-material/Mic'
+import { useState } from 'react'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
+  const [input, setInput] = useState('')
   const router = useRouter()
+
   const [messagesSnapShot] = useCollection(
     db
       .collection('chats')
@@ -36,6 +39,8 @@ const ChatScreen = ({ chat, messages }) => {
     }
   }
 
+  const sendMessage = () => {}
+
   return (
     <Container>
       <Header>
@@ -54,14 +59,17 @@ const ChatScreen = ({ chat, messages }) => {
         </HeaderIcons>
       </Header>
       <MessageContainer>
-        {showMessages()}
+        {/* {showMessages()} */}
         <EndOfMessage />
       </MessageContainer>
       <InputContainer>
         <IconButton>
           <InsertEmoticonIcon />
         </IconButton>
-        <Input />
+        <Input value={input} onChange={(e) => setInput(e.target.value)} />
+        <button hidden disabled={!input} type="submit" onClick={sendMessage}>
+          Send Message
+        </button>
         <IconButton>
           <MicIcon />
         </IconButton>
