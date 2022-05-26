@@ -10,6 +10,7 @@ import Message from './Message'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import MicIcon from '@mui/icons-material/Mic'
 import { useState } from 'react'
+import firebase from 'firebase'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
@@ -39,7 +40,25 @@ const ChatScreen = ({ chat, messages }) => {
     }
   }
 
-  const sendMessage = () => {}
+  const sendMessage = (e) => {
+    e.preventDefault()
+
+    db.collection('users').doc(user.uid).set(
+      {
+        lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
+      },
+      { merge: true }
+    )
+
+    db.collection('chats').doc(router.query.id).collection('messages').add({
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      message: input,
+      user: user.email,
+      photoURL: user.photoURL,
+    })
+
+    setInput('')
+  }
 
   return (
     <Container>
