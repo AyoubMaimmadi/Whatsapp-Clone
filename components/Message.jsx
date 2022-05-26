@@ -8,9 +8,9 @@ const Message = ({ user, message }) => {
   const TypeOfMessage = user === userLoggedIn.email ? Sender : Receiver
 
   return (
-    <TypeOfMessage>
+    <Container>
       <TypeOfMessage>{message.message}</TypeOfMessage>
-    </TypeOfMessage>
+    </Container>
   )
 }
 
@@ -34,6 +34,6 @@ const Sender = styled(MessageElement)`
 `
 
 const Receiver = styled(MessageElement)`
-  text-align: left;
   background-color: whitesmoke;
+  text-align: left;
 `
