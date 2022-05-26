@@ -9,7 +9,7 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 import Message from './Message'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon'
 import MicIcon from '@mui/icons-material/Mic'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import firebase from 'firebase'
 import getRecipientEmail from '../utils/getRecipientEmail'
 import TimeAgo from 'timeago-react'
@@ -17,6 +17,7 @@ import TimeAgo from 'timeago-react'
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
   const [input, setInput] = useState('')
+  const endOfMessageRef = useRef(null)
   const router = useRouter()
 
   const [messagesSnapShot] = useCollection(
@@ -110,7 +111,7 @@ const ChatScreen = ({ chat, messages }) => {
       </Header>
       <MessageContainer>
         {showMessages()}
-        <EndOfMessage />
+        <EndOfMessage ref={endOfMessageRef} />
       </MessageContainer>
       <InputContainer>
         <IconButton>
