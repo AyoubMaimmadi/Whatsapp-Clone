@@ -53,6 +53,13 @@ const ChatScreen = ({ chat, messages }) => {
     }
   }
 
+  const ScrollToBottom = () => {
+    endOfMessageRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+
   const sendMessage = (e) => {
     e.preventDefault()
 
