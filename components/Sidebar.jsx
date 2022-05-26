@@ -71,6 +71,7 @@ const Container = styled.div`
   min-width: 300px;
   max-width: 350px;
   overflow-y: scroll;
+  color: white;
 
   ::-webkit-scrollbar {
     display: none;
@@ -108,12 +109,14 @@ const Search = styled.div`
   align-items: center;
   padding: 20px;
   border-radius: 2px;
+  background-color: #b7b6c2;
 `
 
 const SearchInput = styled.input`
   outline-width: 0;
   border: none;
   flex: 1;
+  background-color: #b7b6c2;
 `
 
 const SidebarButton = styled(Button)`
