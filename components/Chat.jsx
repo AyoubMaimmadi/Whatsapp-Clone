@@ -43,7 +43,7 @@ const Container = styled.div`
   padding: 15px;
   word-break: break-word;
   :hover {
-    background-color: #e9eaeb;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `
 

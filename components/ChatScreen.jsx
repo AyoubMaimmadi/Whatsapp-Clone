@@ -13,6 +13,7 @@ import { useRef, useState } from 'react'
 import firebase from 'firebase'
 import getRecipientEmail from '../utils/getRecipientEmail'
 import TimeAgo from 'timeago-react'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth)
@@ -110,7 +111,7 @@ const ChatScreen = ({ chat, messages }) => {
         </HeaderInformation>
         <HeaderIcons>
           <IconButton>
-            <AttachFileIcon />
+            <SearchOutlinedIcon />
           </IconButton>
           <IconButton>
             <MoreVertIcon />
@@ -124,6 +125,9 @@ const ChatScreen = ({ chat, messages }) => {
       <InputContainer>
         <IconButton>
           <InsertEmoticonIcon />
+        </IconButton>
+        <IconButton>
+          <AttachFileIcon />
         </IconButton>
         <Input value={input} onChange={(e) => setInput(e.target.value)} />
         <button hidden disabled={!input} type="submit" onClick={sendMessage}>
@@ -144,7 +148,7 @@ const Input = styled.input`
   border: none;
   outline: 0;
   border-radius: 10px;
-  background-color: whitesmoke;
+  background-color: #ced4da;
   padding: 20px;
   margin-left: 15px;
   margin-right: 15px;
@@ -158,7 +162,7 @@ const InputContainer = styled.form`
   padding: 10px;
   position: sticky;
   bottom: 0;
-  background-color: white;
+  background-color: #adb5bd;
   z-index: 100;
 `
 
