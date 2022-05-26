@@ -5,12 +5,12 @@ import { auth } from '../firebase'
 const Message = ({ user, message }) => {
   const [userLoggedIn] = useAuthState(auth)
 
-  const typeOfMessage = user === userLoggedIn.email ? Sender : Receiver
+  const TypeOfMessage = user === userLoggedIn.email ? Sender : Receiver
 
   return (
-    <Container>
-      <typeOfMessage>{message.message}</typeOfMessage>
-    </Container>
+    <TypeOfMessage>
+      <TypeOfMessage>{message.message}</TypeOfMessage>
+    </TypeOfMessage>
   )
 }
 
