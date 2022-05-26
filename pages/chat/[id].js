@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import ChatScreen from '../../components/ChatScreen'
 import Sidebar from '../../components/Sidebar'
+import { db } from '../../firebase'
 
 const Chat = () => {
   return (
@@ -18,6 +19,14 @@ const Chat = () => {
 }
 
 export default Chat
+
+export const getServerSideProps = async (contex) => {
+  const ref = db.collection('chats').doc(contex.query.id)
+
+  return {
+    props: {},
+  }
+}
 
 const Container = styled.div`
   display: flex;
