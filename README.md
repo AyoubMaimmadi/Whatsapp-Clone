@@ -14,10 +14,12 @@ To use you need to:
 
 3- Launch your IDE and cd into the projct
 
-5- open terminal and run:
+5- create firebase app and replace the firebaseConfig in firebase.js with your own
+
+6- open terminal and run:
 
 ##### - `npm or yarn install` to install node modules
 
 ##### - `npm or yarn run dev` to open developement at localhost:3000
 
-##### View ->
+##### View -> https://ayoub-whatsapp-clone.vercel.app/
